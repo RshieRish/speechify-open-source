@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  /* PDF.js Text Layer styles */
+  .react-pdf__Page__textContent {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0.2;
+    color: transparent;
+    user-select: text;
+  }
+
+  .react-pdf__Page__textContent span {
+    cursor: text;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    white-space: pre;
+    overflow-wrap: break-word;
+    color: transparent;
+  }
+
+  /* PDF.js Annotation Layer styles */
+  .react-pdf__Page__annotations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .react-pdf__Page__annotations.annotationLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .react-pdf__Page__annotations .annotationLayer section {
+    position: absolute;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* PDF.js styles */
+.react-pdf__Document {
+  @apply flex flex-col items-center;
+}
+
+.react-pdf__Page {
+  @apply mb-4 relative;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
